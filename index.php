@@ -61,17 +61,13 @@
     </span>
   </button>
 
-  <div>
+<div>
+
+<?php include 'pages/services.php'; ?>
+
+</div>
 
 
-  qwertyuiopxc
-  sodium_crypto_sign_verify_detachedsdfgh
-
-<br />
-sodium_crypto_sign_verify_detached
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
-wertyuiop[]</div>
 
 <!-- ?php include 'includes/footer.php'; ?> -->
 
