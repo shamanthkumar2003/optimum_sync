@@ -17,12 +17,6 @@ const tiles = [
     title: 'Jellyfish make <br />everything better.',
     nextTitle: 'Squishy <br />Jellies'
   },
-  {
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/ui8-luca-bravo-bTxMLuJOff4-unsplash.jpg',
-    thumb: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/ui8-luca-bravo-bTxMLuJOff4-unsplash--thumb.jpg',
-    title: 'Design adds value <br />faster than it adds costs.',
-    nextTitle: 'Paper <br />Cut'
-  },
 ];
 
 let activeIndex = 0;
@@ -125,11 +119,10 @@ const titleAnimation = gsap.timeline({ paused: true })
 // Mixing css set properties with Greensock properties causes rendering issues...
 // ...so it's best to set positioning of anything that will change using .set()
 // https://greensock.com/forums/topic/20822-animation-co-ordinates-wrong-after-resize/?tab=comments#comment-97600
-TweenMax.set('.next-tile__preview img', {top: '50%', right: '0', y: '-50%'});
-TweenMax.set('.tile__img', {top: '50%', left: '50%'});
-TweenMax.set('.tile__img--last', {scale: 1, opacity: 0.001, top:'0%', left:'0%'}); // Setting opacity 0 here causes lag on initial play, this dissapears later on, will open a ticket and see if this is a known issue
-TweenMax.set('.tile__img--first, .title__img--last', {yPercent: -50, xPercent: -50});
-TweenMax.set('.title', {y: '-50%', width: '100%'});
+TweenMax.set('.next-tile__preview img', {top: '50%', right: '0', yPercent: -50});
+TweenMax.set('.tile__img', {top: '50%', left: '50%', scale: 1, yPercent: -50, xPercent: -50});
+TweenMax.set('.tile__img--last', {scale: 1, opacity: 0, top:'50%', left:'50%', yPercent: -50, xPercent: -50}); // Set opacity to 0 initially
+TweenMax.set('.title', {yPercent: -50, width: '100%'});
 TweenMax.set('.title__container', {width: '100%'});
 
 // Text change animation

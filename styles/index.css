@@ -32,6 +32,7 @@ body {
   background: #000;
   position: relative;
   overflow: hidden;
+  object-fit: cover;
 }
 
 .title {
@@ -45,6 +46,7 @@ body {
   text-shadow: 0 0.1rem 0 rgba(0,0,0, 0.15);
   letter-spacing: -0.02rem;
   overflow: hidden;
+  
 }
 
 .title--last {
