@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Grid</title>
-    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700" rel="stylesheet">
+<?php
+// Projects.php
+?><section>
     <style>
         :root {
             --color: #3c3163;
@@ -50,7 +46,7 @@
             justify-content: center;
             align-items: center;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 2.5rem;
+            grid-gap: 8rem;
             padding: 4rem;
             margin: 0 auto;
             width: max-content;
@@ -259,6 +255,4 @@
         </a>
     </div>
 </section>
-
-</body>
-</html>
+</section>

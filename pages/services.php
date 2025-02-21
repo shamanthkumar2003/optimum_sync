@@ -16,7 +16,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #0a0a0a;
+            background-color:  #020313;
             min-height: 100vh;
             color: #fff;
         }
@@ -24,7 +24,7 @@
         /* Services Section Styles */
         #services-section {
             padding: 40px 0;
-            background-color: #121212; /* Example background color */
+            background-color:  #020313; /* Example background color */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -37,16 +37,12 @@
         }
 
         .timeline-container {
-    position: relative;
-    max-width: 1200px; /* Adjusted for better responsiveness */
-    z-index: -4; /* Changed from -4 to avoid stacking issues */
-    margin: 0 auto;
-    padding: 50px 20px; /* Added horizontal padding for better spacing */
-    min-height: 100vh;
-}
-.heading{
-z-index: 40;
-}
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 0;
+            min-height: 500px; /* Adjust as needed */
+        }
 
         .content-wrapper {
             display: flex;
@@ -94,7 +90,7 @@ z-index: 40;
         .service-item.active {
             opacity: 1;
             background: #242424;
-            box-shadow: 0 4px 20px rgba(200, 80, 192, 0.2);
+            box-shadow: 0 4px 20px rgba(27, 84, 170, 0.2);
         }
 
         .left-item {
@@ -113,7 +109,7 @@ z-index: 40;
         .service-item h3 {
             color: #fff;
             font-size: 24px;
-            background: linear-gradient(45deg, #4158D0, #C850C0);
+            background: linear-gradient(45deg, #4158D0,rgb(49, 75, 171));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -170,24 +166,14 @@ z-index: 40;
         }
     </style>
 </head>
-<div>      <div class="timeline-container">
-    <div class="heading">
-    <h1 style="
-        text-align: center;
-        font-size: 36px;
-        margin-bottom: 40px;
-        background: linear-gradient(45deg, #4158D0, #C850C0);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        z-index : 50">
-        Our Services
-    </h1>
-    </div>
-        <div class="progress-container">
-            <div class="base-line"></div>
-            <div class="progress-line"></div>
-        </div>
-        <div class="rocket"></div>
+<body>
+    <section id="services-section">
+        <h2>Our Services</h2>
+        <div class="timeline-container">
+            <div class="progress-container">
+                <div class="base-line"></div>
+                <div class="progress-line"></div>
+            </div>
 
             <?php
             $services = [
@@ -215,37 +201,32 @@ z-index: 40;
                         'Web Performance Optimization'
 
                     ]
-                    ],
-           
-            [
-                'title' => 'AI and Data Science',
-                'image' => 'ai.png',
-                'description' => 'Transform your raw data into actionable insights with our comprehensive data science services.',
-                'features' => [
-                    'Advanced Data Analytics',
-                    'Predictive Modeling',
-                    'Statistical Analysis',
-                    'Data Visualization',
-                    'Business Intelligence'
-                ]
-            ],
-            [
-                'title' => 'Digital Marketing',
-                'image' => 'digital.png',
-                'description' => 'Enhance your brand’s online presence and reach the right audience with data-driven digital marketing strategies. From SEO to social media advertising, we help businesses grow and maximize their ROI.',
-                'features' => [
-                    'SEO and SEM',
-                    'Social Media Marketing',
-                    'Content Marketing',
-                    'Email Marketing',
-                    'Influencer Marketing'
-
-                ]
-            ],
-            
-        ];
-      
-
+                ],
+                [
+                    'title' => 'AI and Data Science',
+                    'image' => 'ai.png',
+                    'description' => 'Transform your raw data into actionable insights with our comprehensive data science services.',
+                    'features' => [
+                        'Advanced Data Analytics',
+                        'Predictive Modeling',
+                        'Statistical Analysis',
+                        'Data Visualization',
+                        'Business Intelligence'
+                    ]
+                ],
+                [
+                    'title' => 'Digital Marketing',
+                    'image' => 'digital.png',
+                    'description' => 'Enhance your brand’s online presence and reach the right audience with data-driven digital marketing strategies. From SEO to social media advertising, we help businesses grow and maximize their ROI.',
+                    'features' => [
+                        'SEO and SEM',
+                        'Social Media Marketing',
+                        'Content Marketing',
+                        'Email Marketing',
+                        'Influencer Marketing'
+                    ]
+                ],
+            ];
 
             foreach ($services as $index => $service) {
                 echo '<div class="content-wrapper">';
@@ -292,7 +273,7 @@ z-index: 40;
                     } else if (scrollPosition >= (sectionTop + sectionHeight - windowHeight)) {
                         scrollPercentage = 100; // Set to 100% when at the bottom of the section
                     } else {
-                        scrollPercentage = 5; // Set to 0% if above the section
+                        scrollPercentage = 0; // Set to 0% if above the section
                     }
 
                     progressLine.style.height = `${scrollPercentage}%`;

@@ -66,11 +66,12 @@
 <?php include 'pages/services.php'; ?>
 
 </div>
+<?php include 'pages/projects.php'; ?>
+
 
 
 
 <!-- ?php include 'includes/footer.php'; ?> -->
-<?php include 'includes/footer.php'; ?>
 
 
 
