@@ -1,12 +1,12 @@
-<!-- ?php 
+<?php 
 $current_page = basename($_SERVER['PHP_SELF']); 
-?> -->
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="includes/styles.css">
 
     <title>First Web Page</title>
      <!-- 
@@ -19,13 +19,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="">
+  <!-- <link rel="preload" as="image" href=""> -->
 
 </head>
 
 <body>
 
-  
+
   <div class="preload" data-preaload>
     <div class="circle"></div>
     <p class="text">OS</p>
@@ -136,7 +136,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     </div>
   </header>
 
-  <script src="../scripts/index.js"></script>
+  <script src="includes/header.js"></script>
     <!-- 
     - ionicon link
   -->
@@ -145,5 +145,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 
 </body>
+
+
 
 </html>
