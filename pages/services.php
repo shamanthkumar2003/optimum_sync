@@ -22,13 +22,16 @@
         }
 
         .timeline-container {
-            position: relative;
-            max-width: 1400px;
-            z-index: -4;
-            margin: 0 auto;
-            padding: 40px 0;
-            min-height: 100vh;
-        }
+    position: relative;
+    max-width: 1200px; /* Adjusted for better responsiveness */
+    z-index: -4; /* Changed from -4 to avoid stacking issues */
+    margin: 0 auto;
+    padding: 50px 20px; /* Added horizontal padding for better spacing */
+    min-height: 100vh;
+}
+.heading{
+z-index: 40;
+}
 
         .content-wrapper {
             display: flex;
@@ -170,7 +173,19 @@
         }
     </style>
 </head>
-<div>    <div class="timeline-container">
+<div>      <div class="timeline-container">
+    <div class="heading">
+    <h1 style="
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+        background: linear-gradient(45deg, #4158D0, #C850C0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index : 50">
+        Our Services
+    </h1>
+    </div>
         <div class="progress-container">
             <div class="base-line"></div>
             <div class="progress-line"></div>
@@ -232,6 +247,8 @@
             ],
             
         ];
+      
+
 
         foreach ($services as $index => $service) {
             echo '<div class="content-wrapper">';

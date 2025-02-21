@@ -14,8 +14,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
-
-
+  
   <!-- 
     - preload images
   -->
