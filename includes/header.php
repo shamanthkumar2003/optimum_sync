@@ -86,7 +86,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link hover-underline">
+            <a href="../contact.php" class="navbar-link hover-underline">
               <div class="separator"></div>
 
               <span class="span">Contact</span>
