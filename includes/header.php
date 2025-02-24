@@ -119,9 +119,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
       </nav>
 
       <a href="#" class="btn btn-secondary">
-        <span class="text text-1">Find A Table</span>
+        <span class="text text-1">Contact Us Now</span>
 
-        <span class="text text-2" aria-hidden="true">Find A Table</span>
+        <span class="text text-2" aria-hidden="true">Contact Us Now</span>
       </a>
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
