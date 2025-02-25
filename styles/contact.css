@@ -21,10 +21,11 @@
     min-height: 100vh;
   }
   
-  .container {
+  #con {
     flex: 0 1 700px;
     margin: auto;
     padding: 10px;
+    margin-top:130px;
   }
   
   .screen {
@@ -144,9 +145,11 @@
     margin-top: 40px;
   }
   
-  .app-form-group.buttons {
+  #but {
     margin-bottom: 0;
     text-align: right;
+    justify-content:space-between;
+    display:flex;
   }
   
   .app-form-control {
@@ -207,6 +210,27 @@
     height: 20px;
     margin: 0 5px;
   }
+  .app-form-group.address {
+    text-align: left; /* Centers text */
+    margin-top: 20px; /* Adds spacing between buttons and address */
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.app-form-group.address a {
+    text-decoration: none;
+    color: #32b3fc;
+   
+}
+
+.app-form-group.address a:hover {
+    text-decoration: underline;
+}
+
+.app-form-group.address i {
+    color: #32b3fc;
+    margin-right: 5px;
+}
   
   @media screen and (max-width: 520px) {
     .screen-body {
