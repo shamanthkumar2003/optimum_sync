@@ -75,6 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Contact Us</title>
     <link rel="stylesheet" href="styles/contact.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
 <body>
     <?= $alertMessage ?> <!-- Display the alert message if exists -->
@@ -99,8 +101,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <div class="app-title">
                             <div class="contact-color"><span>CONTACT</span></div>
                             <div class="us-color"><span>US</span></div> 
+
+                            
+                            
                         </div>
-                        <div class="app-contact">CONTACT INFO : 99803 36484</div>
+
+
+                        <div class="app-form-group address">
+    <h3></h3>
+    
+    <p>#01, 2nd Floor, NIE StartUp and Incubation Center,</p>
+    <p>NIE College South Campus, Mananthavadi Road, Mysuru 570008</p>
+
+    <br> <!-- Adds space between Address and Phone -->
+
+    <!-- Phone Number -->
+    <p>
+        <i class="fas fa-phone"></i> 
+        <strong>Call Us:</strong> 
+        <a href="tel:+919876543210">+91 98765 43210</a>
+    </p>
+
+    <br> <!-- Adds space between Phone and Email -->
+
+    <!-- Email with Icon -->
+    <p>
+        <i class="fas fa-envelope"></i> 
+        <strong>Email Us:</strong> 
+        <a href="mailto:office@optimumsync.com">office@optimumsync.com</a>
+    </p>
+</div>
+
+
+                       
                     </div>
                     <div class="screen-body-item">
                         <form action="contact.php" method="POST">
@@ -117,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <div class="app-form-group message">
                                     <input type="text" name="message" class="app-form-control" placeholder="Message" required>
                                 </div>
-                                <div class="app-form-group buttons">
+                                <div class="app-form-group buttons" id="but">
                                     <button type="reset" class="app-form-button">CANCEL</button>
                                     <button type="submit" class="app-form-button">SEND</button>
                                 </div>
