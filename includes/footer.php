@@ -99,7 +99,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <div class="footer-brand">
 
           <a href="#" class="logo">
-            <img src="./assets/images/logo-light.svg" width="162" height="50" alt="EduWeb logo">
+            <img src="./assets/logo.png" width="162" height="50" alt="EduWeb logo">
           </a>
 
           <p class="footer-brand-text">
