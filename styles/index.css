@@ -83,9 +83,10 @@ body {
   border: 0;
   cursor: pointer;
   outline: none;
-  z-index: 100;
+  z-index: 2;
   margin: 0;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+  opacity: 80%;
 }
 
 .next-tile__details {
@@ -158,9 +159,6 @@ img.next-tile__preview__img--last {
   transform-origin: 50% 50%;
 }
 
-/* This was a very quick mockup of the mobile view, if this was a client project I... */
-/* ...would put a little more thought into it and try to flush out something more usable on mobile... */
-/* ...as it sits the image wastes a lot of space, something better can be done here. */
 
 /* Oh and do it mobile first, this will prevent you from having to overwrite so many properties */
 

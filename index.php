@@ -21,13 +21,9 @@
 
 
 <div class="tile">
-  <!-- Why the extra first and last class when you could use :first-child and :last-child you ask? -->
-  <!-- It's so that I don't have to load a extra JS file to allow Greensock to target pseudo elements. -->
-  <!-- This way is a little uglier but more performant. -->
+
   <img alt="" class="tile__img tile__img--first" />
   <img alt="" class="tile__img tile__img--last" />
-  <!-- img tags don't validate without src tag :(, let's pretend like we didn't see that ;-P... -->
-  <!-- ...because this will be implemented into a static site generator, right? riggght? :X  -->
 
   <div class="title">
     &nbsp;<br />&nbsp;

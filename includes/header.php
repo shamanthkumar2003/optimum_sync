@@ -8,17 +8,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="includes/styles.css">
 
-    <title>First Web Page</title>
+    <title>Optimum Sync</title>
+    <link rel="icon" href="../assets/logo.png" type="image/x-icon">
      <!-- 
     - google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
-  
-  <!-- 
-    - preload images
-  -->
-  <!-- <link rel="preload" as="image" href=""> -->
 
 </head>
 
@@ -38,9 +34,10 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="../assets/logo.png" width="120" height="50" alt="Grilli - Home">
+        <img src="../assets/logo.png" width="60" height="50" alt="Grilli - Home">
       </a>
-          Optimum Sync
+          <h1 class="company-title">Optimum Sync</h1>
+
       <nav class="navbar" data-navbar>
 
         <button class="close-btn" aria-label="close menu" data-nav-toggler>
@@ -48,42 +45,30 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </button>
 
         <a href="#" class="logo">
-          <img src="../assets/logo.png" width="160" height="50" alt="Grilli - Home">
+          <img src="../assets/logo.png"  alt="Grilli - Home">
         </a>
 
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <a href="#home" class="navbar-link hover-underline active">
+            <a href="../index.php" class="navbar-link hover-underline">
               <div class="separator"></div>
 
               <span class="span">Home</span>
             </a>
           </li>
 
-          <li class="navbar-item">
-            <a href="#menu" class="navbar-link hover-underline">
-              <div class="separator"></div>
-
-              <span class="span">Menus</span>
-            </a>
-          </li>
+          
 
           <li class="navbar-item">
-            <a href="#about" class="navbar-link hover-underline">
+            <a href="../about.php" class="navbar-link hover-underline">
               <div class="separator"></div>
 
               <span class="span">About Us</span>
             </a>
           </li>
 
-          <li class="navbar-item">
-            <a href="#" class="navbar-link hover-underline">
-              <div class="separator"></div>
-
-              <span class="span">Our Chefs</span>
-            </a>
-          </li>
+       
 
           <li class="navbar-item">
             <a href="../contact.php" class="navbar-link hover-underline">
@@ -99,26 +84,25 @@ $current_page = basename($_SERVER['PHP_SELF']);
           <p class="headline-1 navbar-title">Visit Us</p>
 
           <address class="body-4">
-            Restaurant St, Delicious City, <br>
-            London 9578, UK
+          #01, 2nd Floor, NIE StartUp and Incubation Center,<br/> NIE College South Campus, Mananthavadi Road, Mysuru 570008
           </address>
 
-          <p class="body-4 navbar-text">Open: 9.30 am - 2.30pm</p>
+         
 
-          <a href="mailto:booking@grilli.com" class="body-4 sidebar-link">booking@grilli.com</a>
+          <a href="mailto:booking@grilli.com" class="body-4 sidebar-link">office@optimumsync.com</a>
 
           <div class="separator"></div>
 
-          <p class="contact-label">Booking Request</p>
+          <p class="contact-label">Contact details</p>
 
-          <a href="tel:+88123123456" class="body-1 contact-number hover-underline">
-            +88-123-123456
+          <a href="tel:+919876543210" class="body-1 contact-number hover-underline">
+          +91 98765 43210
           </a>
         </div>
 
       </nav>
 
-      <a href="#" class="btn btn-secondary">
+      <a href="tel:+919876543210" class="btn btn-secondary">
         <span class="text text-1">Contact Us Now</span>
 
         <span class="text text-2" aria-hidden="true">Contact Us Now</span>

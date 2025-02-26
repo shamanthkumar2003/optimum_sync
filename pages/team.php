@@ -23,6 +23,10 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             position: relative;
+            background: linear-gradient(to right, #7829ff, #13f1fc); /* Gradient from purple to blue */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;/* Make the text color transparent so the gradient shows */
         }
         
         .page-title:after {
@@ -161,14 +165,14 @@
         }
 
         .title {
-            font-size: 1.25rem;
+            font-size: 2rem;
             font-weight: 600;
             margin: 0;
             color: #4169e1;
         }
 
         .post {
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             color: #a0a0a0;
             font-weight: 500;
         }
@@ -229,7 +233,7 @@
 <div class="team-container">
     <div class="our-team">
         <div class="team-img">
-        <img src="../assets/founder.jpg" alt="Founder">
+        <img src="../assets/founder2.jpg" alt="Founder">
         <div class="social">
                 <ul>
                     <li style="--i:1"><a href="#"><i class="fab fa-linkedin"></i></a></li>
@@ -238,8 +242,8 @@
             </div>
         </div>
         <div class="team-content">
-            <h3 class="title">Williamson</h3>
-            <span class="post">Web Developer</span>
+            <h3 class="title">Nithin U J</h3>
+            <span class="post">CTO</span>
         </div>
     </div>
 
@@ -254,14 +258,14 @@
             </div>
         </div>
         <div class="team-content">
-            <h3 class="title">Kristiana</h3>
-            <span class="post">Web Designer</span>
+            <h3 class="title">Nithish Kumar J</h3>
+            <span class="post">Managing Director</span>
         </div>
     </div>
 
     <div class="our-team">
         <div class="team-img">
-        <img src="../assets/founder.jpg" alt="Founder">
+        <img src="../assets/founder3.jpg" alt="Founder">
         <div class="social">
                 <ul>
                     <li style="--i:1"><a href="#"><i class="fab fa-linkedin"></i></a></li>
@@ -270,8 +274,8 @@
             </div>
         </div>
         <div class="team-content">
-            <h3 class="title">Williamson</h3>
-            <span class="post">Web Developer</span>
+            <h3 class="title">Rajat Ghanate</h3>
+            <span class="post">Engineering Director</span>
         </div>
     </div>
 </div>

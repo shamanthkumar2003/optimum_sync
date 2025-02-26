@@ -1,6 +1,11 @@
 <?php
 // about.php
-?><!DOCTYPE html>
+?>
+
+<?php include 'includes/header.php'; ?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +13,7 @@
     <title>About Us - Optimum Sync</title>
     <style>
         /* Global Styles */
-        * {
+        {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -62,6 +67,7 @@
         }
 
         .hero-text {
+            padding-top:40px;
             animation: fadeIn 1s ease-out;
         }
 
@@ -77,7 +83,7 @@
         }
 
         .hero-text p {
-            font-size: 1.1rem;
+            font-size: 1.8rem;
             margin-bottom: 2rem;
             color: #b0b0b0;
             max-width: 90%;
@@ -261,7 +267,7 @@
 
         .about-card p {
             color: #b0b0b0;
-            font-size: 0.95rem;
+            font-size: 1.3rem;
         }
 
         .about-content {
@@ -513,7 +519,7 @@
             }
 
             .hero {
-                padding: 80px 0;
+                padding: 80px 10px;
                 min-height: auto;
             }
 
@@ -539,6 +545,13 @@
 
             .section-title h2 {
                 font-size: 2rem;
+            }
+           
+            .hero-graphic {
+                display: none; /* Hide these elements on mobile screens */
+            }
+            .hero-content{
+                padding-top:100px;
             }
         }
     </style>
@@ -587,9 +600,12 @@
                     <p>Our commitment to excellence and results has built lasting partnerships with our clients.</p>
                 </div>
             </div>
+
+            <?php include 'pages/team.php'; ?>
+
             <div class="about-content">
                 <div class="about-image fade-in">
-                    <img src="/api/placeholder/540/360" alt="Optimum Sync Team">
+                    <img src="https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg" alt="Optimum Sync Team">
                 </div>
                 <div class="about-text fade-in">
                     <h3>Pioneering Technology Solutions</h3>
@@ -720,3 +736,4 @@
     </script>
 </body>
 </html>
+<?php include 'includes/footer.php'; ?>

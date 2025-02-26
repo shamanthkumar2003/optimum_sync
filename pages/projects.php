@@ -27,8 +27,9 @@
             font-size: 2.2em;
             display: flex;
             padding: 1em 3em;
-            height: 3em;
+            height: 6em;
             color: #ccc;
+            justify-items:center;
         }
 
         .info img {
@@ -39,6 +40,16 @@
         .info h1 {
             font-size: 1em;
             font-weight: bold;
+        }
+
+        .info h2{
+            font-size: 4rem;
+            background: linear-gradient(to right, #7829ff, #13f1fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-align: center;
         }
 
         .cards-wrapper {
@@ -91,7 +102,7 @@
 
         .card .tags .tag {
             font-size: 0.75em;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgb(15, 94, 179);
             border-radius: 0.3rem;
             padding: 0 0.5em;
             margin-right: 0.5em;
@@ -193,7 +204,7 @@
 <body>
 
 <section class="info">
-    <h1>Our Projects </h1>
+    <h2>Our Projects </h2>
 </section>
 
 <section class="cards-wrapper">
@@ -211,7 +222,7 @@
     </div>
     <div class="card-grid-space">
         <div class="num">02</div>
-        <a class="card" href="https://codetheweb.blog/2017/10/09/basic-types-of-html-tags/" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg)">
+        <a class="card" href="https://sarayu.srisamhithaenterprises.com/" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg)">
             <div>
                 <h1>Sarayu Enclave</h1>
                 <p>Discover Most Suitable Properties in Ballari
@@ -223,7 +234,7 @@
     </div>
     <div class="card-grid-space">
         <div class="num">03</div>
-        <a class="card" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg)">
+        <a class="card" href="" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg)">
             <div>
                 <h1>Invest Club </h1>
                 <p>A new era of investing is here!!!</p>
@@ -234,7 +245,7 @@
     </div>
     <div class="card-grid-space">
         <div class="num">04</div>
-        <a class="card" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg)">
+        <a class="card" href="" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg)">
             <div>
                 <h1>The Rooff </h1>
                 <p>Building Dreams, Designing Elegance</p>
@@ -245,7 +256,7 @@
     </div>
     <div class="card-grid-space">
         <div class="num">05</div>
-        <a class="card" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg)">
+        <a class="card" href="" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg)">
             <div>
                 <h1>Sri Samhitha Enterprises </h1>
                 <p>A new era of investing is here!!!</p>

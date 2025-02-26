@@ -1,12 +1,10 @@
-<?php
-// services.php
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -15,41 +13,46 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color:  #020313;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background-color: #0a0a1a;
             min-height: 100vh;
-            color: #fff;
+            color: #f0f0ff;
+            line-height: 1.6;
         }
 
         /* Services Section Styles */
         #services-section {
-            padding: 40px 0;
-            background-color:  #020313; /* Example background color */
+            padding: 60px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         #services-section h2 {
-            color: #fff;
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 4rem;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #7829ff, #13f1fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .timeline-container {
             position: relative;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 0;
-            min-height: 500px; /* Adjust as needed */
+            padding: 60px 0;
+            min-height: 600px;
         }
 
         .content-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 60px 0;
+            margin: 80px 0;
             position: relative;
+            gap: 40px;
         }
 
         .progress-container {
@@ -57,111 +60,242 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 4px;
+            width: 6px;
             height: 100%;
             z-index: 1;
+            border-radius: 3px;
+            overflow: hidden;
         }
 
         .base-line {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: #1a1a1a;
+            background: #1f1f3f;
         }
 
         .progress-line {
             position: absolute;
             width: 100%;
-            background: linear-gradient(to bottom, #4158D0, #C850C0, #FFCC70);
+            background: linear-gradient(to bottom, #4158D0, #C850C0, #8E6BF1);
             top: 0;
-            transition: height 0.3s ease;
+            transition: height 0.5s ease;
+            box-shadow: 0 0 15px rgba(99, 89, 233, 0.6);
         }
 
         .service-item {
             width: 45%;
             padding: 30px;
-            background: #1a1a1a;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            opacity: 0.5;
+            background: rgba(15, 15, 40, 0.7);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 89, 233, 0.1);
+            opacity: 0.6;
+            transform: translateY(20px);
         }
 
         .service-item.active {
             opacity: 1;
-            background: #242424;
-            box-shadow: 0 4px 20px rgba(27, 84, 170, 0.2);
+            background: rgba(25, 25, 55, 0.8);
+            border: 1px solid rgba(99, 89, 233, 0.3);
+            box-shadow: 0 10px 30px rgba(65, 88, 208, 0.25);
+            transform: translateY(0);
         }
 
         .left-item {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
-        .service-item img {
+        .service-icon {
             width: 80px;
             height: 80px;
-            border-radius: 10px;
-            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background-color: #151530;
+            padding: 10px;
+            box-shadow: 0 4px 15px rgba(65, 88, 208, 0.2);
+            font-size: 36px;
+            background: linear-gradient(135deg, #151530, #1a1a40);
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 15px rgba(65, 88, 208, 0.4);
         }
 
-        .service-item h3 {
-            color: #fff;
-            font-size: 24px;
-            background: linear-gradient(45deg, #4158D0,rgb(49, 75, 171));
+        .service-icon i {
+            background: linear-gradient(135deg, #4158D0, #C850C0);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        .service-item h3 {
+            font-size: 24px;
+            background: linear-gradient(135deg, #4158D0, #8E6BF1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
         .service-item p {
-            color: #ccc;
+            color: #c5c5e0;
             line-height: 1.8;
             font-size: 16px;
             margin-bottom: 15px;
+            text-align: left;
         }
 
         .service-item ul {
-            margin-top: 15px;
-            padding-left: 20px;
-            color: #ccc;
+            margin-top: 20px;
+            padding-left: 10px;
+            color: #c5c5e0;
+            list-style: none;
+            text-align: left;
         }
 
         .service-item ul li {
-            margin: 8px 0;
+            margin: 12px 0;
             position: relative;
+            padding-left: 22px;
+            font-size: 15px;
         }
 
         .service-item ul li::before {
-            content: "•";
-            color: rgb(29, 86, 230);
-            font-weight: bold;
+            content: "";
             position: absolute;
-            left: -15px;
+            left: 0;
+            top: 7px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4158D0, #8E6BF1);
+        }
+
+        /* Circle markers for timeline */
+        .timeline-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #4158D0, #C850C0);
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            box-shadow: 0 0 10px rgba(65, 88, 208, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-marker::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #0a0a1a;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .timeline-marker.active {
+            background: #fff;
+            box-shadow: 0 0 15px rgba(200, 80, 192, 0.8);
+        }
+
+        /* Improved responsive design */
+        @media (max-width: 991px) {
+            .timeline-container {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            
+            .content-wrapper {
+                gap: 30px;
+            }
+            
+            .service-item {
+                padding: 25px;
+            }
         }
 
         @media (max-width: 768px) {
             .timeline-container {
-                padding-left: 80px; /* Space for the fixed line */
+                padding-left: 20px;
+                padding-right: 20px;
             }
-
+            
             .content-wrapper {
                 flex-direction: column;
-                align-items: flex-start;
-                margin: 30px 0;
+                margin: 60px 0;
+                gap: 20px;
             }
-
+            
             .service-item {
                 width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
             }
-
+            
             .progress-container {
-                left: 40px;
+                left: 30px;
                 transform: none;
             }
+            
+            /* Hide timeline markers on mobile */
+            .timeline-marker {
+                display: none;
+            }
+            
+            .left-item {
+                margin-left: 30px;
+            }
+            
+            .right-item {
+                margin-left: 30px;
+            }
+            
+            #services-section h2 {
+                font-size: 2.3rem;
+            }
+        }
 
-            .left-item, .right-item {
-                margin-left: 20px;
+        @media (max-width: 480px) {
+            #services-section {
+                padding: 40px 15px;
+            }
+            
+            #services-section h2 {
+                font-size: 2rem;
+            }
+            
+            .service-item {
+                padding: 20px;
+            }
+            
+            .left-item {
+                gap: 15px;
+            }
+            
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+            
+            .service-item h3 {
+                font-size: 20px;
+            }
+            
+            .service-item p, .service-item ul li {
+                font-size: 14px;
             }
         }
     </style>
@@ -179,8 +313,7 @@
             $services = [
                 [
                     'title' => 'Cloud Computing',
-                    'image' => 'cloud.png',
-                    'description' => 'Scale your business with secure and reliable cloud infrastructure solutions.',
+                    'icon' => 'fa-solid fa-cloud',
                     'features' => [
                         'Cloud Migration',
                         'DevOps Services',
@@ -191,7 +324,7 @@
                 ],
                 [
                     'title' => 'Web and Mobile Development',
-                    'image' => 'web.png',
+                    'icon' => 'fa-solid fa-code',
                     'description' => 'Web and mobile development focus on creating seamless, user-friendly applications that enhance engagement and improve user experience. ',
                     'features' => [
                         'Frontend Development',
@@ -199,12 +332,11 @@
                         'Mobile App Development',
                         'Progressive Web Apps',
                         'Web Performance Optimization'
-
                     ]
                 ],
                 [
                     'title' => 'AI and Data Science',
-                    'image' => 'ai.png',
+                    'icon' => 'fa-solid fa-brain',
                     'description' => 'Transform your raw data into actionable insights with our comprehensive data science services.',
                     'features' => [
                         'Advanced Data Analytics',
@@ -216,8 +348,8 @@
                 ],
                 [
                     'title' => 'Digital Marketing',
-                    'image' => 'digital.png',
-                    'description' => 'Enhance your brand’s online presence and reach the right audience with data-driven digital marketing strategies. From SEO to social media advertising, we help businesses grow and maximize their ROI.',
+                    'icon' => 'fa-solid fa-bullhorn',
+                    'description' => 'Enhance your brands online presence and reach the right audience with data-driven digital marketing strategies. From SEO to social media advertising, we help businesses grow and maximize their ROI.',
                     'features' => [
                         'SEO and SEM',
                         'Social Media Marketing',
@@ -230,16 +362,17 @@
 
             foreach ($services as $index => $service) {
                 echo '<div class="content-wrapper">';
+                echo '<div class="timeline-marker" data-index="' . $index . '"></div>';
 
                 // Left side
                 echo '<div class="service-item left-item" data-index="' . $index . '">';
-                echo '<img src="' . $service['image'] . '" alt="' . $service['title'] . '">';
+                echo '<div class="service-icon"><i class="' . $service['icon'] . '"></i></div>';
                 echo '<h3>' . $service['title'] . '</h3>';
                 echo '</div>';
 
                 // Right side
                 echo '<div class="service-item right-item" data-index="' . $index . '">';
-                echo '<p>' . $service['description'] . '</p>';
+                // echo '<p>' . $service['description'] . '</p>';
                 echo '<ul>';
                 foreach ($service['features'] as $feature) {
                     echo '<li>' . $feature . '</li>';
@@ -257,48 +390,63 @@
                 const servicesSection = document.getElementById('services-section');
                 const progressLine = servicesSection.querySelector('.progress-line');
                 const contentWrappers = servicesSection.querySelectorAll('.content-wrapper');
+                const timelineMarkers = servicesSection.querySelectorAll('.timeline-marker');
+
+                function isElementInViewport(el) {
+                    const rect = el.getBoundingClientRect();
+                    return (
+                        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.7 &&
+                        rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) * 0.3
+                    );
+                }
 
                 function updatePositions() {
-                    const sectionTop = servicesSection.offsetTop;
-                    const sectionHeight = servicesSection.offsetHeight;
+                    const sectionRect = servicesSection.getBoundingClientRect();
+                    const sectionTop = sectionRect.top;
+                    const sectionHeight = sectionRect.height;
                     const scrollPosition = window.scrollY;
                     const windowHeight = window.innerHeight;
+                    const documentHeight = document.documentElement.scrollHeight;
 
-                    let scrollPercentage = 0;
-
-                    // Check if the services section is in view
-                    if (scrollPosition > sectionTop && scrollPosition < (sectionTop + sectionHeight - windowHeight)) {
-                        scrollPercentage = ((scrollPosition - sectionTop) / (sectionHeight - windowHeight)) * 100;
-                        scrollPercentage = Math.max(0, Math.min(100, scrollPercentage));
-                    } else if (scrollPosition >= (sectionTop + sectionHeight - windowHeight)) {
-                        scrollPercentage = 100; // Set to 100% when at the bottom of the section
-                    } else {
-                        scrollPercentage = 0; // Set to 0% if above the section
+                    // Calculate how far down the section we've scrolled
+                    let sectionProgress = 0;
+                    if (sectionTop <= 0) {
+                        // Section is at top of viewport or above
+                        sectionProgress = Math.abs(sectionTop) / (sectionHeight - windowHeight);
                     }
+                    
+                    // Clamp between 0 and 1
+                    sectionProgress = Math.max(0, Math.min(1, sectionProgress));
+                    
+                    // Update progress line
+                    progressLine.style.height = `${sectionProgress * 100}%`;
 
-                    progressLine.style.height = `${scrollPercentage}%`;
-
-                    contentWrappers.forEach((wrapper) => {
-                        const rect = wrapper.getBoundingClientRect();
+                    // Update each content wrapper
+                    contentWrappers.forEach((wrapper, index) => {
                         const leftItem = wrapper.querySelector('.left-item');
                         const rightItem = wrapper.querySelector('.right-item');
+                        const marker = timelineMarkers[index];
 
-                        // Check if wrapper is in the middle of screen
-                        if (rect.top <= windowHeight/2 && rect.bottom >= windowHeight/2) {
+                        if (isElementInViewport(wrapper)) {
                             leftItem.classList.add('active');
                             rightItem.classList.add('active');
+                            if (marker) marker.classList.add('active');
                         } else {
                             leftItem.classList.remove('active');
                             rightItem.classList.remove('active');
+                            if (marker) marker.classList.remove('active');
                         }
                     });
                 }
 
                 // Update on scroll
                 window.addEventListener('scroll', updatePositions);
+                
+                // Also update on resize for responsive adjustments
+                window.addEventListener('resize', updatePositions);
 
                 // Initial update
-                updatePositions();
+                setTimeout(updatePositions, 100);
             });
         </script>
     </section>

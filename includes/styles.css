@@ -138,8 +138,15 @@
     color: inherit;
     text-decoration: none;
   }
+
   
-  img { height: auto; }
+  img { height: auto; 
+        
+  }
+  .logo{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   
   input,
   button,
@@ -213,6 +220,7 @@
     line-height: var(--lineHeight-1);
   }
   
+  
   .headline-1 { font-size: var(--fontSize-headline-1); }
   
   .headline-2 {
@@ -254,7 +262,8 @@
     #REUSED STYLE
   \*-----------------------------------*/
   
-  .container { padding-inline: 16px; }
+  .container { padding-inline: 16px;
+   }
   
   .separator {
     width: 8px;
@@ -605,7 +614,7 @@
   
   .header.active {
     padding-block: 16px;
-    background-color: var(--eerie-black-4);
+    background-color: #0e0e0e;
     border-color: var(--black-alpha-15);
   }
   
@@ -615,7 +624,7 @@
   }
   
   .header .container {
-    padding-inline: 20px;
+    padding-inline: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -758,21 +767,7 @@
     pointer-events: all;
   }
   
-  
-  
-  
-  
 
-  
-
-
-  
-  
-  /*-----------------------------------*\
-
-  
-  
-  
   /*-----------------------------------*\
     #MEDIA QUERIES
   \*-----------------------------------*/
@@ -817,15 +812,8 @@
      */
   
     .topbar {
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding-block: 10px;
-      border-block-end: 1px solid var(--white-alpha-20);
-      z-index: 4;
-      transition: var(--transition-1);
+      display: none;
+     
     }
   
     .topbar:has(~ .header.active) { transform: translateY(-100%); }
@@ -835,13 +823,12 @@
   
     .topbar .container,
     .topbar-item {
-      display: flex;
+      display: none;
       align-items: center;
     }
   
     .topbar .container {
-      justify-content: center;
-      gap: 30px;
+      display:none;
     }
   
     .topbar-item { gap: 6px; }
@@ -1019,3 +1006,52 @@
     .navbar { margin-inline: auto; }
 
   }
+
+
+  /* Modern Company Title Styling */
+.company-title {
+  /* Typography */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  
+  /* Spacing & Layout */
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  text-align: left;
+  
+  /* Animation & Effects */
+  transition: all 0.3s ease;
+  
+  /* Responsive adjustments */
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Hover effect - optional */
+.company-title:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* For dark mode support */
+@media (prefers-color-scheme: dark) {
+  .company-title {
+    color: #f0f0f0;
+    background-image: linear-gradient(90deg, #f0f0f0, #a0a0a0);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .company-title {
+    text-align: center;
+    padding: 0.25rem 1rem;
+  }
+}

@@ -6,16 +6,16 @@
 
 const tiles = [
   {
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/ui8-alex-shutin-kKvQJ6rK6S4-unsplash.jpg',
-    thumb: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/ui8-alex-shutin-kKvQJ6rK6S4-unsplash--thumb.jpg',
-    title: 'Summer treads on <br />the heels of spring.',
-    nextTitle: 'Blue <br />Mountains'
+    image: '../assets/hero.jpg',
+    thumb: '../assets/hero.jpg',
+    title: 'Innovative Solutions <br>for a Future-Driven World',
+    nextTitle: 'Innovation'
   },
   {
-    image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/ui8-marat-gilyadzinov-MYadhrkenNg-unsplash.jpg',
-    thumb: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/49240/ui8-marat-gilyadzinov-MYadhrkenNg-unsplash--thumb.jpg',
-    title: 'Jellyfish make <br />everything better.',
-    nextTitle: 'Squishy <br />Jellies'
+    image: '../assets/hero2.jpg',
+    thumb: '../assets/hero2.jpg',
+    title: ' <br />--- Igniting Innovation ---',
+    nextTitle: 'Innovative Solutions'
   },
 ];
 
