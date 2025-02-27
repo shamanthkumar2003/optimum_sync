@@ -34,7 +34,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="../assets/logo.png" width="60" height="50" alt="Grilli - Home">
+        <img src="../assets/logo3.png" width="60" height="auto" alt="Home">
       </a>
           <h1 class="company-title">Optimum Sync</h1>
 

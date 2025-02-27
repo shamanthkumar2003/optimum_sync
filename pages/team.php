@@ -243,7 +243,6 @@
         </div>
         <div class="team-content">
             <h3 class="title">Nithin U J</h3>
-            <span class="post">CTO</span>
         </div>
     </div>
 
@@ -252,14 +251,14 @@
             <img src="../assets/founder.jpg" alt="Founder">
             <div class="social">
                 <ul>
-                    <li style="--i:1"><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                    <li style="--i:3"><a href="#"><i class="far fa-envelope"></i></a></li>
+                    <li style="--i:1"><a href="https://www.linkedin.com/in/nithish-kumar-j-b72213339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                    <i class="fab fa-linkedin"></i></a></li>
+                    <li style="--i:3"><a href="nithishkumar.j@optimumsync.com"><i class="far fa-envelope"></i></a></li>
                 </ul>
             </div>
         </div>
         <div class="team-content">
             <h3 class="title">Nithish Kumar J</h3>
-            <span class="post">Managing Director</span>
         </div>
     </div>
 
@@ -268,14 +267,18 @@
         <img src="../assets/founder3.jpg" alt="Founder">
         <div class="social">
                 <ul>
-                    <li style="--i:1"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+
+                <li style="--i:1">
+                        <i class="fab fa-linkedin"></i>
+                    
+                </li>
+                </a>
                     <li style="--i:3"><a href="#"><i class="far fa-envelope"></i></a></li>
                 </ul>
             </div>
         </div>
         <div class="team-content">
             <h3 class="title">Rajat Ghanate</h3>
-            <span class="post">Engineering Director</span>
         </div>
     </div>
 </div>

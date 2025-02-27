@@ -183,7 +183,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
         <div class="footer-brand">
           <a href="#" class="logo">
-            <img src="./assets/logo.png" width="80" height="50" alt="OptimumSync logo">
+            <img src="./assets/logo3.png" width="80" height="50" alt="OptimumSync logo">
           </a>
 
           <p class="footer-brand-text">
@@ -218,7 +218,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <a href="../about.php" class="footer-link">About Us</a>
           </li>
           <li>
-            <a href="../cintact.php" class="footer-link">Contact Us</a>
+            <a href="../contact.php" class="footer-link">Contact Us</a>
           </li>
          
         </ul>

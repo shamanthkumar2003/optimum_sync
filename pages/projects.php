@@ -3,7 +3,7 @@
 ?><section>
     <style>
         :root {
-            --color: #3c3163;
+            --color:rgb(30, 124, 191);
             --transition-time: 0.5s;
         }
 
@@ -25,11 +25,12 @@
 
         .info {
             font-size: 2.2em;
-            display: flex;
-            padding: 1em 3em;
-            height: 6em;
+            display: block;
+            padding: 1em;
+            height: 4em;
             color: #ccc;
             justify-items:center;
+            text-align:center;
         }
 
         .info img {
@@ -50,6 +51,8 @@
             letter-spacing: 1px;
             font-weight: 700;
             text-align: center;
+            justify-items:center;
+
         }
 
         .cards-wrapper {
@@ -94,26 +97,35 @@
             font-size: 0.6em;
             margin-top: 0.5em;
             line-height: 2em;
-        }
+            margin-bottom: 0.5em;
 
+        }
         .card .tags {
             display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
         }
 
         .card .tags .tag {
-            font-size: 0.75em;
-            background: rgb(15, 94, 179);
-            border-radius: 0.3rem;
-            padding: 0 0.5em;
-            margin-right: 0.5em;
+            font-size: 0.85em;
+            background: #0f5eb3;
+            color: #fff;
+            border-radius: 2rem;
+            padding: 0.2em 1em;
+            margin: 0;
             line-height: 1.5em;
-            transition: all var(--transition-time);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .card:hover .tags .tag {
-            background: var(--color);
-            color: white;
+            background: #2d7ee7;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
+
 
         .card .date {
             position: absolute;
@@ -210,7 +222,7 @@
 <section class="cards-wrapper">
     <div class="card-grid-space">
         <div class="num">01</div>
-        <a class="card" href="https://icstnie2025.com/" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)">
+        <a class="card" href="https://icstnie2025.com/" style="--bg-img: url(../assets/icst.png)">
             <div>
                 <h1>ICST NIE 2025</h1>
                 <p>2nd International conclave on Sustainable Technologies for MSME sector
@@ -222,7 +234,7 @@
     </div>
     <div class="card-grid-space">
         <div class="num">02</div>
-        <a class="card" href="https://sarayu.srisamhithaenterprises.com/" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg)">
+        <a class="card" href="https://sarayu.srisamhithaenterprises.com/" style="--bg-img: url(../assets/sarayu.png)">
             <div>
                 <h1>Sarayu Enclave</h1>
                 <p>Discover Most Suitable Properties in Ballari
@@ -234,7 +246,7 @@
     </div>
     <div class="card-grid-space">
         <div class="num">03</div>
-        <a class="card" href="" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg)">
+        <a class="card" href="" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg)">
             <div>
                 <h1>Invest Club </h1>
                 <p>A new era of investing is here!!!</p>
@@ -245,7 +257,7 @@
     </div>
     <div class="card-grid-space">
         <div class="num">04</div>
-        <a class="card" href="" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg)">
+        <a class="card" href="" style="--bg-img: url(../assets/therooff.jpg)">
             <div>
                 <h1>The Rooff </h1>
                 <p>Building Dreams, Designing Elegance</p>
@@ -256,7 +268,7 @@
     </div>
     <div class="card-grid-space">
         <div class="num">05</div>
-        <a class="card" href="" style="--bg-img: url(https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg)">
+        <a class="card" href="" style="--bg-img: url(../assets/samhitha.jpg)">
             <div>
                 <h1>Sri Samhitha Enterprises </h1>
                 <p>A new era of investing is here!!!</p>

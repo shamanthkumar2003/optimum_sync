@@ -275,6 +275,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
+            margin-top:4rem;
         }
 
         .about-image {
@@ -643,14 +644,13 @@
                 <div class="vm-card fade-in">
                     <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m22 17-9.3-6.2a1 1 0 0 0-1.4 0L2 17"></path>
-                            <path d="M20 8h2v9"></path>
-                            <path d="M2 8h2v9"></path>
-                            <path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"></path>
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
                         </svg>
                         Our Mission
                     </h3>
-                    <p>At Optimum Sync, our mission is to empower emerging ventures by providing innovative technological solutions that help overcome operational challenges. We are dedicated to bridging the gap between ambition and execution, enabling businesses to scale seamlessly and navigate the complexities of the modern tech landscape.</p>
+                    <p>At Optimum Sync, our mission is to empower emerging ventures by providing innovative technological solutions that help overcome operational challenges. We are dedicated to bridging the gap between ambition and execution, enabling businesses to scale seamlessly and navigate the complexities of the modern tech landscape.</p>
                 </div>
             </div>
         </div>

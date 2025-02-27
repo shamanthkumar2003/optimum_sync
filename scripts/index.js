@@ -14,7 +14,7 @@ const tiles = [
   {
     image: '../assets/hero2.jpg',
     thumb: '../assets/hero2.jpg',
-    title: ' <br />--- Igniting Innovation ---',
+    title: ' Igniting Innovation, <br />Synchronizing Excellence',
     nextTitle: 'Innovative Solutions'
   },
 ];
