@@ -19,14 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'odp9875@gmail.com'; // Your Gmail
-        $mail->Password = 'nzro zbru wvoh vhiu'; // Your Gmail App Password
+        $mail->Username = 'optimumsync@gmail.com'; // Your Gmail
+        $mail->Password = 'byev lkil ckym gzkg'; // Your Gmail App Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port = 465;
 
         // Sender & Recipient
         $mail->setFrom($email, $name);
-        $mail->addAddress('odp9875@gmail.com'); // Receiver's email
+        $mail->addAddress('optimumsync@gmail.com'); // Receiver's email
 
         // Email Content
         $mail->isHTML(true);
