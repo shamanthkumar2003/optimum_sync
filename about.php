@@ -553,6 +553,9 @@
             .hero-content{
                 padding-top:100px;
             }
+            .about-content {
+            margin-top: 5rem;
+        }
         }
     </style>
 </head>
@@ -585,12 +588,12 @@
             </div>
             <div class="about-cards">
                 <div class="about-card fade-in">
-                    <span>2018</span>
+                    <span>2024</span>
                     <h3>Founded</h3>
                     <p>Established with a vision to transform how businesses leverage technology for growth and efficiency.</p>
                 </div>
                 <div class="about-card fade-in">
-                    <span>500+</span>
+                    <span>10+</span>
                     <h3>Clients</h3>
                     <p>Trusted by industry leaders and innovative startups across multiple sectors worldwide.</p>
                 </div>
@@ -635,8 +638,7 @@
                         </svg>
                         Our Vision
                     </h3>
-                    <p>To be the global leader in business optimization solutions, recognized for innovation, excellence, and transformative impact. We envision a world where every business, regardless of size or industry, has access to the tools and strategies they need to thrive in an increasingly digital landscape.</p>
-                    <p>We strive to create a future where technology seamlessly integrates with business processes, enabling unprecedented levels of efficiency, productivity, and growth for our clients worldwide.</p>
+                    <p>To be the leading partner for emerging ventures, driving innovation and seamless growth by providing cutting-edge technology solutions that remove barriers, foster efficiency, and unlock new possibilities for success in an ever-evolving digital world.</p>
                 </div>
                 <div class="vm-card fade-in">
                     <h3>
@@ -648,8 +650,7 @@
                         </svg>
                         Our Mission
                     </h3>
-                    <p>To empower businesses through innovative technology solutions that optimize operations, enhance productivity, and accelerate growth. We are committed to delivering exceptional value to our clients by understanding their unique needs and developing customized strategies that address their specific challenges.</p>
-                    <p>Through collaboration, expertise, and unwavering dedication to excellence, we aim to build lasting partnerships that drive meaningful results and contribute to the long-term success of the businesses we serve.</p>
+                    <p>At Optimum Sync, our mission is to empower emerging ventures by providing innovative technological solutions that help overcome operational challenges. We are dedicated to bridging the gap between ambition and execution, enabling businesses to scale seamlessly and navigate the complexities of the modern tech landscape.</p>
                 </div>
             </div>
         </div>

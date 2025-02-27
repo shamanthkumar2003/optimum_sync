@@ -396,7 +396,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
     <?= $alertMessage ?> <!-- Display the alert message if exists -->
-
+    
     <div class="background">
         <div class="container">
             <!-- Contact Form -->
