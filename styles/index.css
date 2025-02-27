@@ -106,7 +106,7 @@ body {
 .next-tile__heading {
   margin-bottom: 4.5rem;
   text-transform: uppercase;
-  color: #b3b3b3;
+  color: #2d2a2a;
   font-weight: 600;
   display: block;
 }
@@ -133,7 +133,7 @@ body {
 }
 
 .next-tile__arrow {
-  fill: #b3b3b3;
+  fill: #212121;
   width: 2.4rem;
   display: block;
 }

@@ -71,418 +71,479 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Contact Us - Optimum Sync</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* Reset and Base Styles */
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
         }
 
         body {
             background-color: #0f0f19;
-            color: #fff;
+            color: #e0e0e0;
+            overflow-x: hidden;
             line-height: 1.6;
             height:100%;
         }
 
-        .background {
-            padding-top: 140px;
-
-        }
-
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Main Contact Form - Smaller Size */
-        .screen {
-            background: #1a1a2e;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 255, 0.15);
+        /* Contact Hero Section */
+        .contact-hero {
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            position: relative;
             overflow: hidden;
-            margin-bottom: 30px;
-            max-width: 900px;
+            background-color: #0f0f19;
+            padding-top: 120px;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(120, 41, 255, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        .contact-title {
+            position: relative;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-title h2 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            display: inline-block;
+            background: linear-gradient(to right, #ffffff, #b0b0b0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .contact-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #7829ff, #13f1fc);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .contact-title p {
+            margin-top: 20px;
+            color: #b0b0b0;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .screen-header {
-            display: flex;
-            justify-content: flex-end;
-            padding: 12px 20px;
-            background: #16213e;
+        /* Contact Form Section - Styled like VM Cards */
+        .contact-section {
+            padding: 40px 0 80px;
+            position: relative;
         }
 
-        .screen-header-right {
-            display: flex;
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .screen-body {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .screen-body-item {
-            flex: 1;
-            padding: 25px;
-            min-width: 300px;
-        }
-
-        .app-title {
-            margin-bottom: 25px;
-        }
-
-        .contact-color span {
-            color: #4681f4;
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .us-color span {
-            color: #fff;
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .app-form-group {
-            margin-bottom: 15px;
-        }
-
-        .app-form-control {
-            width: 100%;
-            padding: 10px 15px;
-            background: #272741;
-            border: none;
-            border-radius: 6px;
-            color: #fff;
-            font-size: 14px;
-            transition: all 0.3s;
-        }
-
-        .app-form-control:focus {
-            background: #323259;
-            outline: none;
-            box-shadow: 0 0 8px rgba(70, 129, 244, 0.4);
-        }
-
-        .app-form-control::placeholder {
-            color: #7c7c8a;
-        }
-
-        .message .app-form-control {
-            min-height: 100px;
-            resize: none;
-        }
-
-        .buttons {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-        }
-
-        .app-form-button {
-            padding: 8px 20px;
-            border: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .app-form-button[type="reset"] {
-            background: #272741;
-            color: #fff;
-        }
-
-        .app-form-button[type="submit"] {
-            background: #4681f4;
-            color: #fff;
-        }
-
-        .app-form-button:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-
-        /* Contact Cards - Smaller Size */
-        .contact-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 30px;
-            justify-content: center;
-        }
-
-        .contact-card {
-            width: 240px;
-            background: #1a1a2e;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 255, 0.15);
-            transition: transform 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .contact-card i {
-            font-size: 30px;
-            color: #4681f4;
-            margin-bottom: 12px;
-        }
-
-        .contact-card h3 {
-            font-size: 16px;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-
-        .contact-card p {
-            color: #ddd;
-            margin-bottom: 15px;
-            font-size: 13px;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            background: #4681f4;
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            transition: all 0.3s;
-        }
-
-        .contact-btn:hover {
-            background: #3a6fd3;
-        }
-
-        /* Map Section with Address Text on Left */
-        .map-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 30px;
-            background: #1a1a2e;
-            border-radius: 12px;
+        .contact-form {
+            background-color: rgba(25, 25, 35, 0.6);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 255, 0.15);
+            z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
         }
 
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #7829ff, #13f1fc);
+            filter: blur(80px);
+            opacity: 0.1;
+            top: -20px;
+            right: -20px;
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+
+        .contact-form:hover::before {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            opacity: 0.15;
+        }
+
+        .contact-form:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form h3 {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        .contact-form h3 svg {
+            margin-right: 15px;
+            color: #13f1fc;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form .form-control {
+            width: 100%;
+            background-color: rgba(15, 15, 25, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px 15px;
+            color: #e0e0e0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form .form-control:focus {
+            outline: none;
+            border-color: #7829ff;
+            box-shadow: 0 0 0 3px rgba(120, 41, 255, 0.2);
+        }
+
+        .contact-form .form-control::placeholder {
+            color:rgb(237, 234, 234);
+        }
+
+        .contact-form textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        /* .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        } */
+
+        .btn-reset {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+
+        .btn-submit {
+            background: linear-gradient(to right, #7829ff, #13f1fc);
+            color: #ffffff;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Address Container - Modernized */
         .address-container {
-            flex: 1;
-            min-width: 300px;
-            padding: 30px;
+            background-color: rgba(25, 25, 35, 0.6);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
         }
 
-        .address-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #4681f4;
+        .address-container::before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #13f1fc, #7829ff);
+            filter: blur(80px);
+            opacity: 0.1;
+            bottom: -20px;
+            left: -20px;
+            z-index: -1;
+            transition: all 0.5s ease;
         }
 
-        .address-content {
-            color: #ddd;
-            margin-bottom: 20px;
+        .address-container:hover::before {
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            opacity: 0.15;
         }
 
-        .address-content p {
+        .address-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .address-container h3 {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        .address-container h3 svg {
+            margin-right: 15px;
+            color: #13f1fc;
+        }
+
+        .location-details {
+            margin-bottom: 30px;
+        }
+
+        .location-details p {
+            color: #b0b0b0;
             margin-bottom: 10px;
-            font-size: 14px;
+            font-size: 1rem;
         }
 
-        .contact-info {
+        .contact-details {
             margin-top: 20px;
         }
 
-        .contact-info p {
+        .contact-details .detail-item {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
-            font-size: 14px;
+            margin-bottom: 15px;
+            color: #b0b0b0;
         }
 
-        .contact-info i {
-            color: #4681f4;
-            margin-right: 10px;
-            font-size: 16px;
+        .contact-details .detail-item i {
             width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            color: #13f1fc;
+            font-size: 1.1rem;
         }
 
-        .contact-info a {
-            color: #ddd;
+        .contact-details .detail-item a {
+            color: #b0b0b0;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
-        .contact-info a:hover {
-            color: #4681f4;
+        .contact-details .detail-item a:hover {
+            color: #13f1fc;
         }
 
         .map-container {
-            flex: 2;
-            min-width: 300px;
-            height: 350px;
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .map-container iframe {
-            border: none;
-            height: 100%;
             width: 100%;
+            height: 100%;
+            border: none;
         }
 
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
 
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .screen-body {
-                flex-direction: column;
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
 
-            .screen-body-item {
-                padding: 20px;
-                min-width: auto;
-            }
-
-            .contact-cards {
-                flex-direction: row;
-                justify-content: center;
-            }
-
-            .map-section {
-                flex-direction: column;
-            }
-
-            .map-container {
-                height: 250px;
+            .contact-hero {
+                min-height: 30vh;
             }
         }
 
-        @media screen and (max-width: 480px) {
-            .buttons {
+        @media (max-width: 768px) {
+            .contact-title h2 {
+                font-size: 2rem;
+            }
+
+            .btn-container {
                 flex-direction: column;
             }
 
-            .app-form-button {
+            .btn {
                 width: 100%;
-                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-form, .address-container {
+                padding: 30px 20px;
             }
 
-            .contact-cards {
-                flex-direction: column;
-                align-items: center;
+            .contact-title h2 {
+                font-size: 1.8rem;
             }
 
-            .contact-card {
-                width: 100%;
-                max-width: 280px;
+            .contact-form h3, .address-container h3 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <?= $alertMessage ?> <!-- Display the alert message if exists -->
-    
-    <div class="background">
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
         <div class="container">
-            <!-- Contact Form -->
-            <div class="screen">
-                <div class="screen-header">
-                    <div class="screen-header-right">
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
-                    </div>
-                </div>
-                <div class="screen-body">
-                    <div class="screen-body-item left">
-                        <div class="app-title">
-                            <div class="contact-color"><span>CONTACT</span></div>
-                            <div class="us-color"><span>US</span></div>
+            <div class="contact-title fade-in">
+                <h2>Get In Touch</h2>
+                <p>We're here to help you optimize your business. Reach out to us for personalized solutions that drive success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Form Card -->
+                <div class="contact-form fade-in">
+                    <h3>
+                        <div style="padding-right:20px;">
+                    <i class="fas fa-envelope" style="color:#13f1fc"></i>
                         </div>
-                        <p style="color:#ddd; font-size:14px; margin-bottom:20px;">
-                            We'd love to hear from you. Fill out the form and we'll get back to you as soon as possible.
-                        </p>
-                    </div>
-                    <div class="screen-body-item">
-                        <form action="contact.php" method="POST">
-                            <div class="app-form">
-                                <div class="app-form-group">
-                                    <input type="text" name="name" class="app-form-control" placeholder="Name" required>
-                                </div>
-                                <div class="app-form-group">
-                                    <input type="email" name="email" class="app-form-control" placeholder="Email" required>
-                                </div>
-                                <div class="app-form-group">
-                                    <input type="tel" name="phone" class="app-form-control" placeholder="Contact No" required>
-                                </div>
-                                <div class="app-form-group message">
-                                    <textarea name="message" class="app-form-control" placeholder="Message" required></textarea>
-                                </div>
-                                <div class="app-form-group buttons">
-                                    <button type="reset" class="app-form-button">CANCEL</button>
-                                    <button type="submit" class="app-form-button">SEND</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        Send Us a Message
+                    </h3>
+                    <form action="contact.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" class="form-control" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="btn-container">
+                            <button type="reset" class="btn btn-reset">Reset</button>
+                            <button type="submit" class="btn btn-submit">Send Message</button>
+                        </div>
+                    </form>
                 </div>
-            </div>
 
-            <!-- Contact Cards -->
-            <div class="contact-cards">
-                <!-- Call Card -->
-                <div class="contact-card">
-                    <i class="fas fa-phone"></i>
-                    <h3>Call Us</h3>
-                    <p>Available Mon-Fri, 9AM-6PM</p>
-                    <a href="tel:+919876543210" class="contact-btn">+91 98765 43210</a>
-                </div>
-                
-                <!-- Email Card -->
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email Us</h3>
-                    <p>Response within 24 hours</p>
-                    <a href="mailto:office@optimumsync.com" class="contact-btn">Get in Touch</a>
-                </div>
-            </div>
-
-            <!-- Map Section with Address on Left -->
-            <div class="map-section">
-                <div class="address-container">
-                    <h2 class="address-title">Our Location</h2>
-                    <div class="address-content">
+                <!-- Address Container -->
+                <div class="address-container fade-in">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Our Location
+                    </h3>
+                    <div class="location-details">
                         <p>#01, 2nd Floor, NIE StartUp and Incubation Center,</p>
                         <p>NIE College South Campus, Mananthavadi Road,</p>
                         <p>Mysuru 570008</p>
                     </div>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> <a href="tel:+919876543210">+91 98765 43210</a></p>
-                        <p><i class="fas fa-envelope"></i> <a href="mailto:office@optimumsync.com">office@optimumsync.com</a></p>
-                        <p><i class="fas fa-clock"></i> Monday - Friday, 9:00 AM - 6:00 PM</p>
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:office@optimumsync.com">office@optimumsync.com</a>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Monday - Friday, 10:00 AM - 5:00 PM</span>
+                        </div>
                     </div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.2485330313286!2d76.63139731482007!3d12.293685991293144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf7b02bfffffc7%3A0xfbaeffc0b95f3cd8!2sThe%20National%20Institute%20of%20Engineering!5e0!3m2!1sen!2sin!4v1676953408128!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1099.463074642418!2d76.64103181530515!3d12.280019463470031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf6500023480d5%3A0xcbb924bb227e8d56!2sOptimum%20Sync%20LLP!5e0!3m2!1sen!2sin!4v1740632773933!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            function checkFade() {
+                fadeElements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight - 100;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('active');
+                    }
+                });
+            }
+            
+            // Initial check
+            checkFade();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkFade);
+        });
+    </script>
 
 <?php include 'includes/footer.php'; ?>
 </body>
